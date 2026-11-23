@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Freiz – Projet de Matthieu Bayle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Page projet : uniquement ce qui n'existe pas dans style.css ===== */
+    .hero.proj { margin-top: 80px; padding: 110px 0 0 }
+    .hero.proj .banner { aspect-ratio: 2.3; width: 100%; border-radius: 44px; background-color: var(--deep); background-position: center top }
+    .hero.proj .head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; margin-top: 36px }
+    .hero.proj .txt { text-align: left }
+    .hero.proj h1 { text-align: left; font-size: clamp(40px, 5vw, 56px); letter-spacing: -.01em; margin: 0 0 10px }
+    .hero.proj p { text-align: left; line-height: 1.35; max-width: 26ch; font-size: clamp(17px, 1.8vw, 20px) }
+    .tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin: 0; padding: 0; list-style: none }
+    .tags li { border: 3px solid var(--green); border-radius: 99px; padding: .5em 1.4em; font: 800 15px var(--head) }
+
+    /* image vide : on voit le nom du fichier attendu */
+    .ph.empty { display: grid; place-items: center; color: rgba(255, 255, 255, .55); font: 500 14px var(--body); text-align: center; padding: 14px }
+
+    /* fiche rapide */
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 0; padding: 0; list-style: none }
+    .facts li { background: var(--deep); border-radius: 30px; padding: 24px 26px }
+    .facts b { display: block; font: 800 13px var(--head); color: var(--green); margin-bottom: 8px }
+    .facts span { font: 800 clamp(18px, 2vw, 22px)/1.15 var(--head) }
+
+    /* texte */
+    .prose { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start }
+    .prose h3 { font: 800 clamp(26px, 3vw, 34px)/1.15 var(--head); margin: 0 }
+    .prose p { margin: 0 0 18px; line-height: 1.5; font-size: clamp(15px, 1.6vw, 17px); max-width: 60ch }
+    .prose p:last-child { margin: 0 }
+
+    /* galerie */
+    .gal { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 300px 300px; gap: 18px }
+    .gal .ph { border-radius: 34px; background-color: var(--deep) }
+    .gal .ph:first-child { grid-row: span 2 }
+
+    /* étapes : c'est une vraie suite, donc numérotée */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 0; padding: 0; list-style: none; counter-reset: s }
+    .steps li { counter-increment: s; background: var(--deep); border-radius: 36px; padding: 30px 28px 34px }
+    .steps li::before { content: counter(s); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--green); font: 800 20px var(--head); margin-bottom: 22px }
+    .steps h3 { font: 800 clamp(20px, 2.2vw, 26px)/1.1 var(--head); margin: 0 0 10px }
+    .steps p { margin: 0; line-height: 1.45; font-size: 15px }
+
+    /* fin de page */
+    .end { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px; padding: 44px clamp(28px, 6vw, 64px); background: var(--deep); border-radius: 44px }
+    .end h3 { font: 800 clamp(26px, 3.4vw, 38px)/1.15 var(--head); margin: 0 }
+    .end .row { display: flex; flex-wrap: wrap; gap: 14px }
+
+    @media(max-width:860px) {
+      .prose { grid-template-columns: 1fr }
+      .hero.proj .banner { aspect-ratio: 1.5; border-radius: 34px }
+      .tags { justify-content: flex-start }
+      .facts, .steps { grid-template-columns: 1fr 1fr }
+      .gal { grid-template-columns: 1fr; grid-template-rows: 260px 200px 200px }
+      .gal .ph:first-child { grid-row: auto }
+    }
+    @media(max-width:560px) { .facts, .steps { grid-template-columns: 1fr } }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="btn dark" href="index.html#accueil">Accueil</a>
+    <a class="btn dark" href="index.html#projets">Projets</a>
+    <a class="btn dark" href="index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+    <header class="hero proj">
+      <div class="wrap">
+        <div class="ph banner" id="imgHero" role="img" aria-label="Logo Freiz et trois gourdes de compote : miel, pomme et fraise-menthe"></div>
+        <div class="head">
+          <div class="txt">
+            <h1>FREIZ</h1>
+            <p>Création d’une entreprise de compote énergisante</p>
+            <a class="btn" href="#concept" data-to="#concept">Découvrir</a>
+          </div>
+          <ul class="tags">
+            <li>Packaging</li>
+            <li>Branding</li>
+            <li>Entrepreneuriat</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section class="s">
+      <div class="wrap">
+        <ul class="facts">
+          <li><b>Rôle</b><span>Fondateur &amp; designer</span></li>
+          <li><b>Année</b><span>2025</span></li>
+          <li><b>Outils</b><span>Figma, Illustrator</span></li>
+          <li><b>Livrables</b><span>Logo, packaging, site</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="s" id="concept">
+      <div class="wrap">
+        <h2 class="title"><span class="t">Le concept</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8 C 50 4, 120 11, 197 6" /></svg></h2>
+        <div class="prose">
+          <h3>Un coup de boost dans une gourde.</h3>
+          <div>
+            <p>Freiz est une compote pensée pour celles et ceux qui ont besoin d’énergie sans passer par les boissons sucrées ou les barres industrielles : on l’emporte partout et elle se boit sans cuillère.</p>
+            <p>Le projet couvre toute la création de l’entreprise : le nom, l’identité visuelle, le packaging et la présentation de l’offre.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s" id="identite">
+      <div class="wrap">
+        <h2 class="title"><span class="t">Identité</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8 C 50 4, 120 11, 197 6" /></svg></h2>
+        <div class="gal">
+          <div class="ph" data-img="freiz-logo.png" role="img" aria-label="Logo Freiz"></div>
+          <div class="ph" data-img="freiz-packaging.png" role="img" aria-label="Packaging Freiz"></div>
+          <div class="ph" data-img="freiz-affiche.png" role="img" aria-label="Affiche Freiz"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s" id="process">
+      <div class="wrap">
+        <h2 class="title"><span class="t">Processus</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8 C 50 4, 120 11, 197 6" /></svg></h2>
+        <ol class="steps">
+          <li>
+            <h3>Comprendre</h3>
+            <p>Étude du marché de l’énergie, des habitudes des sportifs et des étudiants, et définition de la cible.</p>
+          </li>
+          <li>
+            <h3>Créer</h3>
+            <p>Choix du nom, du logo et des couleurs, puis maquettes du packaging et tests de lisibilité.</p>
+          </li>
+          <li>
+            <h3>Présenter</h3>
+            <p>Mise en forme de l’offre et des supports pour défendre le projet devant un jury.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="s" id="contact">
+      <div class="wrap">
+        <h2 class="title"><span class="t">Contact</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path d="M3 8 C 50 4, 120 11, 197 6" />
+          </svg></h2>
+        <div class="contact">
+          <div class="ph" id="imgContact" aria-hidden="true"></div>
+          <div>
+            <h3>Vous voulez faire équipe ?</h3>
+            <a class="btn big" href="mailto:ei.matthieub@gmail.com">Me contacter</a>
+            <div class="mail"><span>ei.matthieub@gmail.com</span>
+              <button class="copy" id="copy" aria-label="Copier l’adresse e-mail"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                  <rect x="8" y="3" width="11" height="14" rx="2" />
+                  <path d="M5 8v11a2 2 0 002 2h9" />
+                </svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+  <div class="toast" id="toast" role="status">Adresse copiée</div>
+  </main>
+  <footer></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script>
+    /* ========= CONFIG : images de la page (mets les fichiers à côté de freiz.html) ========= */
+    const IMG_DIR = '';
+    const HERO_IMG = 'freiz.png';
+    /* les autres images se règlent avec l'attribut data-img dans le HTML */
+    /* ======================================================================================= */
+    gsap.registerPlugin(ScrollTrigger);
+    const $ = s => document.querySelector(s);
+
+    /* images : si le fichier manque, la case affiche son nom au lieu de rester vide */
+    function loadImg(el, file) {
+      const src = IMG_DIR + file, im = new Image();
+      im.onload = () => { el.style.backgroundImage = 'url("' + src + '")'; el.classList.remove('empty'); el.textContent = ''; };
+      im.onerror = () => { el.classList.add('empty'); el.textContent = file; };
+      im.src = src;
+    }
+    loadImg($('#imgHero'), HERO_IMG);
+    document.querySelectorAll('[data-img]').forEach(el => loadImg(el, el.dataset.img));
+
+    /* Lenis */
+    const lenis = new Lenis({ lerp: 0.1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('[data-to]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); lenis.scrollTo(a.dataset.to, { offset: 0 }); }));
+
+    /* Boutons : même effet élastique que sur l'accueil */
+    document.querySelectorAll('.btn').forEach(b => {
+      const bg = getComputedStyle(b).backgroundColor, fg = getComputedStyle(b).color;
+      b.addEventListener('mouseenter', () => gsap.to(b, { scale: 1.08, backgroundColor: '#3aa72e', color: '#fff', duration: .5, ease: 'elastic.out(1,.5)' }));
+      b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .25, y: (e.clientY - r.top - r.height / 2) * .35, duration: .3 }); });
+      b.addEventListener('mouseleave', () => gsap.to(b, { scale: 1, x: 0, y: 0, backgroundColor: bg, color: fg, duration: .6, ease: 'elastic.out(1,.6)' }));
+      b.addEventListener('pointerdown', () => gsap.to(b, { scale: .92, duration: .12 }));
+      b.addEventListener('pointerup', () => gsap.to(b, { scale: 1.08, duration: .4, ease: 'back.out(3)' }));
+    });
+
+    /* Titres : mots qui montent + soulignement qui se dessine */
+    document.querySelectorAll('.title .t').forEach(el => {
+      el.innerHTML = el.textContent.trim().split(/\s+/).map(w => '<span class="w"><span>' + w + '</span></span>').join(' ');
+    });
+    document.querySelectorAll('.title').forEach(t => {
+      const svg = t.querySelector('.ul'), path = svg.querySelector('path'), prog = { p: 0 };
+      let len = 0;
+      const draw = () => { path.style.strokeDashoffset = len * (1 - prog.p); };
+      const build = () => {
+        const w = Math.max(40, Math.round(svg.getBoundingClientRect().width)), h = 14;
+        svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+        svg.removeAttribute('preserveAspectRatio');
+        path.setAttribute('d', 'M3 8 C ' + (w * .25) + ' 3, ' + (w * .6) + ' 12, ' + (w - 3) + ' 6');
+        len = path.getTotalLength();
+        path.style.strokeDasharray = len + ' ' + len;
+        draw();
+      };
+      build();
+      new ResizeObserver(build).observe(svg);
+      path.style.visibility = 'hidden';
+      gsap.timeline({ scrollTrigger: { trigger: t, start: 'top 85%', toggleActions: 'play none none reverse' } })
+        .from(t.querySelectorAll('.w>span'), { yPercent: 115, duration: .8, stagger: .06, ease: 'power4.out' })
+        .set(path, { visibility: 'visible' }, '-=.25')
+        .to(prog, { p: 1, duration: 1, ease: 'power2.inOut', onUpdate: draw }, '<')
+        .set(path, { visibility: 'visible' }, '>');
+    });
+
+    /* Entrée de page : une seule séquence */
+    gsap.from('.nav', { y: -80, opacity: 0, duration: 1, ease: 'power3.out' });
+    gsap.from('.hero .wrap > *', { y: 40, opacity: 0, duration: 1.1, stagger: .15, ease: 'power3.out', delay: .2 });
+    addEventListener('load', () => ScrollTrigger.refresh());
+  </script>
+</body>
+</html>
