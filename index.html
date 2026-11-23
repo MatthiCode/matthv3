@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Matthieu Bayle – Web Developer et UX/UI Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500&display=swap');
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="nav" aria-label="Navigation principale">
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a class="btn dark" href="#accueil" data-to="#accueil">Accueil</a>
+      <a class="btn dark" href="#projets" data-to="#projets">Projets</a>
+      <a class="btn dark" href="#simulateur" data-to="#simulateur">Simulateur</a>
+      <a class="btn dark" href="#contact" data-to="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="accueil">
+      <div class="scene" id="scene" aria-hidden="true"></div>
+      <div class="card">
+        <div class="txt">
+          <h1>Matthieu Bayle</h1>
+          <p>Web Developer et UX/UI Designer</p>
+          <a class="btn" href="#" id="cv">Mon cv</a>
+        </div>
+        <div class="flip" id="flip">
+          <div class="flip-in" id="flipIn">
+            <div class="ph face front" id="imgHero" role="button" tabindex="0" aria-pressed="false"
+              aria-label="Portrait de Matthieu Bayle : cliquer pour retourner la carte et voir mes réseaux"></div>
+            <div class="face back" id="flipBack" inert>
+              <p>Retrouve-moi sur</p>
+              <a class="btn" id="linkedin" href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+                LinkedIn
+              </a>
+              <a class="btn" id="github" href="#" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
+                GitHub
+              </a>
+              <button class="flipback" id="flipClose" type="button">Retour à la photo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="vsec" id="video" aria-label="Vidéo de présentation">
+      <div class="vbox" id="vbox">
+        <video id="vid" muted loop playsinline></video>
+        <span id="vlabel">Vidéo</span>
+      </div>
+    </section>
+
+    <section class="s" id="apropos">
+      <div class="wrap">
+        <h2 class="title"><span class="t">A propos</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path d="M3 8 C 50 4, 120 11, 197 6" />
+          </svg></h2>
+        <div class="card about">
+          <div>
+            <p class="split">Développeur Web et Designer UX / UI j’associe vos envies avec celle de vos clients.</p>
+            <p class="split">Etant passionnée de design UX / UI de développement web et d’entreprenariat. J’ai vécu des
+              expériences enrichissante qui me permette aujourd’hui de vous accompagné.</p>
+          </div>
+          <div class="ph" id="imgAbout" role="img" aria-label="Photo À propos"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s" id="projets">
+      <div class="wrap">
+        <h2 class="title"><span class="t">Projet</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path d="M3 8 C 50 4, 120 11, 197 6" />
+          </svg></h2>
+      </div>
+      <div class="stage" id="stage" data-lenis-prevent aria-label="Carrousel des projets : glisser, molette ou flèches">
+        <canvas id="gl"></canvas>
+      </div>
+      <div class="ctrl">
+        <button class="round" id="prev" aria-label="Projet précédent"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 5l-7 7 7 7" />
+          </svg></button>
+        <button class="round" id="next" aria-label="Projet suivant"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 5l7 7-7 7" />
+          </svg></button>
+      </div>
+    </section>
+
+    <section class="s" id="simulateur">
+      <div class="wrap">
+        <h2 class="title"><span class="t">Simulateur</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path d="M3 8 C 50 4, 120 11, 197 6" />
+          </svg></h2>
+        <div class="card sim">
+          <div class="sim-form">
+            <p class="sim-intro">Entrez vos chiffres actuels et voyez ce qu’un site mieux conçu peut changer pour votre activité.</p>
+            <fieldset>
+              <legend>Votre site aujourd’hui</legend>
+              <div class="field">
+                <div class="row"><label for="sVisits">Visiteurs par mois</label><output id="oVisits" for="sVisits"></output></div>
+                <input type="range" id="sVisits" min="100" max="50000" step="100" value="3000">
+              </div>
+              <div class="field">
+                <div class="row"><label for="sRate">Visiteurs qui deviennent clients</label><output id="oRate" for="sRate"></output></div>
+                <input type="range" id="sRate" min="0.5" max="10" step="0.1" value="1.5">
+              </div>
+              <div class="field">
+                <div class="row"><label for="sValue">Valeur moyenne d’un client</label><output id="oValue" for="sValue"></output></div>
+                <input type="range" id="sValue" min="20" max="5000" step="10" value="250">
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Ce que le nouveau site apporte</legend>
+              <div class="field">
+                <div class="row"><label for="sDesign">Design plus clair et plus rassurant</label><output id="oDesign" for="sDesign"></output></div>
+                <input type="range" id="sDesign" min="0" max="50" step="1" value="15">
+              </div>
+              <div class="field">
+                <div class="row"><label for="sFlow">Parcours de contact simplifié</label><output id="oFlow" for="sFlow"></output></div>
+                <input type="range" id="sFlow" min="0" max="50" step="1" value="20">
+              </div>
+            </fieldset>
+          </div>
+          <div class="sim-out">
+            <div>
+              <div class="gain" id="rGain">+ 0 €</div>
+              <p class="gain-label">de chiffre d’affaires en plus par an</p>
+            </div>
+            <div class="bars">
+              <div class="bar">
+                <div class="row"><span>Aujourd’hui</span><strong id="rBefore"></strong></div>
+                <div class="track"><div class="fill before" id="bBefore"></div></div>
+              </div>
+              <div class="bar">
+                <div class="row"><span>Avec le nouveau site</span><strong id="rAfter"></strong></div>
+                <div class="track"><div class="fill after" id="bAfter"></div></div>
+              </div>
+            </div>
+            <dl class="stats">
+              <div><dt>Clients par mois</dt><dd id="rClients"></dd></div>
+              <div><dt>Taux de conversion</dt><dd id="rRates"></dd></div>
+            </dl>
+            <p class="note">Estimation indicative : les pourcentages sont des hypothèses à ajuster, le résultat réel dépend de votre activité.</p>
+            <a class="btn dark" href="#contact" data-to="#contact">Parlons de votre site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s" id="contact">
+      <div class="wrap">
+        <h2 class="title"><span class="t">Contact</span><svg class="ul" viewBox="0 0 200 14" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path d="M3 8 C 50 4, 120 11, 197 6" />
+          </svg></h2>
+        <div class="contact">
+          <div class="ph" id="imgContact" aria-hidden="true"></div>
+          <div>
+            <h3>Vous voulez faire équipe ?</h3>
+            <a class="btn big" href="mailto:ei.matthieub@gmail.com">Me contacter</a>
+            <div class="mail"><span>ei.matthieub@gmail.com</span>
+              <button class="copy" id="copy" aria-label="Copier l’adresse e-mail"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                  <rect x="8" y="3" width="11" height="14" rx="2" />
+                  <path d="M5 8v11a2 2 0 002 2h9" />
+                </svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="moon" aria-hidden="true"></div>
+    <div class="treeline" id="treeline" aria-hidden="true"></div>
+    <button class="sign" id="sign" type="button" aria-label="Signature de Matthieu Bayle : cliquer pour la redessiner">
+      <svg viewBox="0 0 380 130" aria-hidden="true">
+        <path class="s-main" d="M12 94 C13.7 87.0 18.7 63.7 22 52 C25.3 40.3 29.3 23.0 32 24 C34.7 25.0 36.3 46.7 38 58 C39.7 69.3 40.0 92.3 42 92 C44.0 91.7 47.3 66.3 50 56 C52.7 45.7 56.0 29.0 58 30 C60.0 31.0 60.3 51.7 62 62 C63.7 72.3 65.7 88.3 68 92 C70.3 95.7 73.0 88.0 76 84 C79.0 80.0 82.5 71.5 86 68 C89.5 64.5 96.5 62.2 97 63 C97.5 63.8 90.5 68.8 89 73 C87.5 77.2 86.3 84.8 88 88 C89.7 91.2 96.2 95.0 99 92 C101.8 89.0 103.7 71.0 105 70 C106.3 69.0 105.3 82.5 107 86 C108.7 89.5 112.7 91.3 115 91 C117.3 90.7 119.0 91.5 121 84 C123.0 76.5 125.2 55.3 127 46 C128.8 36.7 130.8 24.3 132 28 C133.2 31.7 133.2 57.7 134 68 C134.8 78.3 134.8 86.3 137 90 C139.2 93.7 144.3 91.3 147 90 C149.7 88.7 151.0 89.3 153 82 C155.0 74.7 157.2 55.0 159 46 C160.8 37.0 162.8 24.3 164 28 C165.2 31.7 165.2 57.7 166 68 C166.8 78.3 166.8 86.3 169 90 C171.2 93.7 176.3 91.3 179 90 C181.7 88.7 182.8 90.3 185 82 C187.2 73.7 189.8 50.7 192 40 C194.2 29.3 195.8 20.3 198 18 C200.2 15.7 205.2 19.0 205 26 C204.8 33.0 199.0 49.0 197 60 C195.0 71.0 192.7 90.0 193 92 C193.3 94.0 196.0 77.0 199 72 C202.0 67.0 207.3 62.3 211 62 C214.7 61.7 219.7 65.3 221 70 C222.3 74.7 217.7 86.3 219 90 C220.3 93.7 226.3 93.0 229 92 C231.7 91.0 233.2 88.3 235 84 C236.8 79.7 238.3 65.7 240 66 C241.7 66.3 242.5 81.7 245 86 C247.5 90.3 252.2 92.7 255 92 C257.8 91.3 258.7 84.0 262 82 C265.3 80.0 271.2 81.8 275 80 C278.8 78.2 284.2 74.2 285 71 C285.8 67.8 282.5 61.7 280 61 C277.5 60.3 272.2 63.5 270 67 C267.8 70.5 266.5 77.8 267 82 C267.5 86.2 269.8 90.7 273 92 C276.2 93.3 282.5 92.0 286 90 C289.5 88.0 292.0 84.3 294 80 C296.0 75.7 297.0 63.0 298 64 C299.0 65.0 298.3 81.3 300 86 C301.7 90.7 305.3 92.7 308 92 C310.7 91.3 314.0 87.0 316 82 C318.0 77.0 319.0 61.0 320 62 C321.0 63.0 320.0 82.8 322 88 C324.0 93.2 328.7 93.3 332 93 C335.3 92.7 340.3 87.2 342 86" />
+        <path class="s-bar" d="M118 56 C121.2 55.7 144.0 53.6 150 53 C156.0 52.4 175.2 50.3 178 50" />
+        <path class="s-dot" d="M241 44 C241.2 44.1 242.8 44.9 243 45" />
+        <path class="s-swash" d="M342 86 C344.7 87.7 358.3 92.3 358 96 C357.7 99.7 356.3 105.3 340 108 C323.7 110.7 291.7 111.5 260 112 C228.3 112.5 183.3 111.7 150 111 C116.7 110.3 82.0 109.3 60 108 C38.0 106.7 25.0 103.8 18 103" />
+      </svg>
+    </button>
+  </footer>
+  <div class="toast" id="toast" role="status">Adresse copiée</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>
